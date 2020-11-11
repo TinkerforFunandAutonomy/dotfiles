@@ -1,5 +1,8 @@
-# dotfiles for Debian Buster on my Thinkcentre M93p tiny
+# dotfiles Debian Buster@ThinkCentre M93p tiny
 Partial selection of dotfiles. They are currated (personal and silly stuff left out).
+
+As showen in [Channel intro](https://www.youtube.com/watch?v=-xwoci5WeEI) on YouTube
+
 
 ## Dotfiles are personal
 These dotfiles are not intended to work out of the box and you should not use them for other purpose as for reference. 
