@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles for Debian Buster on my Thinkcentre M93p tiny
 Partial selection of dotfiles. They are currated (personal and silly stuff left out).
 
 ## Dotfiles are personal

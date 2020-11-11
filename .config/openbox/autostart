@@ -1,0 +1,36 @@
+## Openbox autostart.sh
+## ====================
+## This file has its origin in crunchbangplusplus Openbox config
+## https://github.com/CBPP/cbpp-configs
+## It may or may not have anything in common with its ancestor in future iterations.
+## This text is just to acknowledge the fact and give credit where credit is due.
+## ====================
+
+
+## Gnome polkit
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+## Set wallpaper
+hsetroot -cover ~/Pictures/bg.jpg
+
+## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
+## Adjust the values according to your preferances.
+xset r rate 250 25 &
+
+## Turn on/off system beep
+xset b off &
+
+## US + DK layout toggle with both ctrl
+## https://www.youtube.com/watch?v=-nmCoLkY3qY
+setxkbmap -rules evdev -model pc105 -layout "us,dk" -option "grp:ctrls_toggle,grp_led:caps"
+
+
+xfce4-power-manager &
+
+sleep 2 && compton -b &
+
+## Trayer setup
+## https://www.youtube.com/watch?v=SXg_FZ89qxw
+trayer --edge top --align right  --widthtype request --SetDockType false &
+sleep 2 && wmctrl -a panel -b toggle,hidden
+

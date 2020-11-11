@@ -46,7 +46,7 @@
   </placement>
 
   <theme>
-    <name>CBPP</name>
+    <name>Adwaita Tweaks Dark</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -166,71 +166,41 @@
        Many programs reserve space automatically, but you can use this in other
        cases. -->
   <margins>
-    <top>1</top>
+    <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
-
-  <dock>
-    <position>TopLeft</position>
-    <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
-    <floatingX>0</floatingX>
-    <floatingY>0</floatingY>
-    <noStrut>no</noStrut>
-    <stacking>Above</stacking>
-    <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Vertical</direction>
-    <!-- 'Vertical' or 'Horizontal' -->
-    <autoHide>no</autoHide>
-    <hideDelay>300</hideDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
-    <showDelay>300</showDelay>
-    <!-- in milliseconds (1000 = 1 second) -->
-    <moveButton>Middle</moveButton>
-    <!-- 'Left', 'Middle', 'Right' -->
-  </dock>
 
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
 
   <!-- Keybindings for desktop switching -->
   <keybind key="C-A-Left">
-    <action name="GoToDesktop"><to>left</to><wrap>no</wrap></action>
+    <action name="GoToDesktop">
+      <to>left</to>
+      <wrap>yes</wrap>
+    </action>
   </keybind>
   <keybind key="C-A-Right">
-    <action name="GoToDesktop"><to>right</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="C-A-Up">
-    <action name="GoToDesktop"><to>up</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="C-A-Down">
-    <action name="GoToDesktop"><to>down</to><wrap>no</wrap></action>
+    <action name="GoToDesktop">
+      <to>right</to>
+      <wrap>yes</wrap>
+    </action>
   </keybind>
   <keybind key="S-A-Left">
-    <action name="SendToDesktop"><to>left</to><wrap>no</wrap></action>
+    <action name="SendToDesktop">
+      <to>left</to>
+      <wrap>no</wrap>
+    </action>
   </keybind>
   <keybind key="S-A-Right">
-    <action name="SendToDesktop"><to>right</to><wrap>no</wrap></action>
+    <action name="SendToDesktop">
+      <to>right</to>
+      <wrap>no</wrap>
+    </action>
   </keybind>
-  <keybind key="S-A-Up">
-    <action name="SendToDesktop"><to>up</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="S-A-Down">
-    <action name="SendToDesktop"><to>down</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="W-F1">
-    <action name="GoToDesktop"><to>1</to></action>
-  </keybind>
-  <keybind key="W-F2">
-    <action name="GoToDesktop"><to>2</to></action>
-  </keybind>
-  <keybind key="W-F3">
-    <action name="GoToDesktop"><to>3</to></action>
-  </keybind>
-  <keybind key="W-F4">
-    <action name="GoToDesktop"><to>4</to></action>
-  </keybind>
+
   <keybind key="W-d">
     <action name="ToggleShowDesktop"/>
   </keybind>
@@ -256,7 +226,7 @@
     </keybind>
     <keybind key="A-Print">
       <action name="Execute">
-        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/images/ &amp; viewnior ~/images/$f'</command>
+        <command>scrot '%Y-%m-%d--%s_$wx$h_scrot.png' -e 'mv $f ~/Pictures/ &amp; viewnior ~/Pictures/$f'</command>
       </action>
     </keybind>
 
@@ -312,12 +282,49 @@
     </action>
   </keybind>
 
-    <!-- Keybindings for running applications -->
-    <keybind key="W-Tab">
-      <action name="ShowMenu">
-        <menu>client-list-combined-menu</menu>
-      </action>
-    </keybind>
+  <!-- Keybindings for running applications -->
+
+  <keybind key="W-space">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Rofi</name>
+      </startupnotify>
+      <command>rofi -show drun</command>
+    </action>
+  </keybind>
+  <keybind key="W-S-space">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Rofi</name>
+      </startupnotify>
+      <command>rofi -show window</command>
+    </action>
+  </keybind>
+  <keybind key="W-Return">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Terminal</name>
+      </startupnotify>
+      <command>sakura</command>
+    </action>
+  </keybind>
+  <keybind key="W-S-Return">
+    <action name="Execute">
+      <startupnotify>
+        <enabled>true</enabled>
+        <name>Terminal</name>
+      </startupnotify>
+      <command>x-terminal-emulator</command>
+    </action>
+  </keybind>
+  <keybind key="W-Tab">
+    <action name="ShowMenu">
+      <menu>client-list-combined-menu</menu>
+    </action>
+  </keybind>
 
 <!-- Keybindings for window tiling -->
 	<keybind key="W-Left">    	# HalfLeftScreen
@@ -356,7 +363,187 @@
     	<height>50%</height>
   	  </action>
 	</keybind>
+
+<!-- Keychain & Keybindings for faux tiling -->
+<!-- https://www.youtube.com/watch?v=k4mTQjt5otc -->
+
+   <keybind key="W-g">
+      <keybind key="0">
+        <action name="Execute">
+         <command>~/.scripts/monitor-reset.sh</command>
+        </action>
+      </keybind>
+      <keybind key="1">
+        <action name="Execute">
+         <command>~/.scripts/monitor-60-40-vsplit.sh</command>
+        </action>
+     </keybind>
+     <keybind key="2">
+       <action name="Execute">
+          <command>~/.scripts/monitor-study.sh</command>
+       </action>
+     </keybind>
+      <keybind key="3">
+        <action name="Execute">
+         <command>~/.scripts/monitor-virtual-split.sh</command>
+       </action>
+     </keybind>
+     <keybind key="4">
+       <action name="Execute">
+         <command>~/.scripts/monitor-75-25-mpv.sh</command>
+        </action>
+     </keybind>
+   </keybind>
+
+<!-- Keychain & Keybindings to overrule faux tiling -->
+<!-- https://www.youtube.com/watch?v=SzSFG0Idxe8 -->
+
+   <keybind key="W-w">
+     <keybind key="0">
+       <action name="Execute">
+         <command>wmctrl -r :ACTIVE: -e 0,10,10,1900,1180</command>
+       </action>
+      </keybind>
+     <keybind key="1">
+       <action name="Execute">
+         <command>wmctrl -r :ACTIVE: -e 0,240,60,1440,1080</command>
+       </action>
+      </keybind>
+    </keybind>
+
+<!-- Keybindings to place windows in virtual monitors in faux tiling and a reset position-->
+
+    <keybind key="W-0">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+        <width>95%</width>
+        <height>95%</height>
+        <monitor>current</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-1">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>100%</height>
+        <monitor>1</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-2">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>100%</height>
+        <monitor>2</monitor>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>100%</width>
+        <height>100%</height>
+        <monitor>3</monitor>
+      </action>
+    </keybind>
+
+<!-- Keychain & Keybindings to launch xephyr -->
+<!-- https://www.youtube.com/watch?v=-xwoci5WeEI -->
+
+    <keybind key="W-x">
+      <keybind key="1">
+        <action name="Execute">
+          <command>~/.scripts/xephyr-16-10.sh 1</command>
+        </action>
+      </keybind>
+      <keybind key="2">
+        <action name="Execute">
+          <command>~/.scripts/xephyr-16-10.sh 2</command>
+        </action>
+      </keybind>
+      <keybind key="3">
+        <action name="Execute">
+          <command>~/.scripts/xephyr-1440-900.sh 1</command>
+        </action>
+      </keybind>
+      <keybind key="4">
+        <action name="Execute">
+          <command>~/.scripts/xephyr-1440-900.sh 2</command>
+        </action>
+      </keybind>
+      <keybind key="5">
+        <action name="Execute">
+          <command>~/.scripts/xephyr-i3.sh 5</command>
+        </action>
+      </keybind>
+    </keybind>
+
+<!-- Keychain & Keybindings commands group under W-C to prevent fat fingers -->
+
+    <keybind key="W-c">
+
+<!-- https://www.youtube.com/watch?v=pkPJ2cPQJM4 -->
+      <keybind key="c">
+        <action name="Execute">
+          <startupnotify>
+            <enabled>true</enabled>
+            <name>wmctrl</name>
+          </startupnotify>
+          <command>wmctrl -F -a cheatsheet -b toggle,hidden</command>
+        </action>
+      </keybind>
+
+      <keybind key="q">
+        <action name="Execute">
+          <command>~/.scripts/qrcode-gen.sh</command>
+        </action>
+      </keybind>
+      <keybind key="w">
+        <action name="Execute">
+          <command>ffplay -f v4l2 -video_size 320x240 -i /dev/video0</command>
+        </action>
+      </keybind>
+      
+<!-- https://www.youtube.com/watch?v=SXg_FZ89qxw -->
+      <keybind key="W-t">
+        <action name="Execute">
+          <startupnotify>
+             <enabled>true</enabled>
+              <name>wmctrl</name>
+            </startupnotify>
+           <command>wmctrl -a panel -b toggle,hidden</command>
+       </action>
+     </keybind>
+    </keybind>
+
+<!-- Useful keybindings when using undecorated windows -->
+
+    <keybind key="W-S-r">
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-S-q">
+      <action name="Exit">
+        <prompt>yes</prompt>
+      </action>
+    </keybind>
+    <keybind key="W-S-o">
+      <action name="ToggleOmnipresent"/>
+    </keybind>
+    <keybind key="W-S-h">
+      <action name="Iconify"/>
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen"/>
+    </keybind>
   </keyboard>
+
   <mouse>
     <dragThreshold>8</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
@@ -826,5 +1013,51 @@
 
   # end of the example
 -->
+    <application class="Sakura" name="sakura">
+      <decor>no</decor>
+    </application>
+    <application class="mpv" name="gl">
+      <decor>no</decor>
+      <position force="yes">
+        <x>-0</x>
+        <y>0</y>
+      </position>
+      <desktop>all</desktop>
+      <layer>above</layer>
+    </application>
+    <application class="X-terminal-emulator" name="x-terminal-emulator">
+      <decor>no</decor>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+    <application class="Xephyr" name="Xephyr">
+      <decor>no</decor>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+    <application class="feh" name="feh">
+      <decor>no</decor>
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+    <application title="cheatsheet">
+      <decor>no</decor>
+      <desktop>all</desktop>
+      <layer>above</layer>
+    </application>
+    <application class="ffplay" name="ffplay">
+      <decor>no</decor>
+      <position force="yes">
+        <x>-0</x>
+        <y>-0</y>
+      </position>
+      <desktop>all</desktop>
+    </application>
   </applications>
 </openbox_config>
