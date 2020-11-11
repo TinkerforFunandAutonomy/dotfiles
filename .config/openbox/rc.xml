@@ -485,7 +485,7 @@
       </keybind>
     </keybind>
 
-<!-- Keychain & Keybindings commands group under W-C to prevent fat fingers -->
+<!-- Keychain & Keybindings commands group under W-c to prevent fat fingers -->
 
     <keybind key="W-c">
 
@@ -512,7 +512,7 @@
       </keybind>
       
 <!-- https://www.youtube.com/watch?v=SXg_FZ89qxw -->
-      <keybind key="W-t">
+      <keybind key="t">
         <action name="Execute">
           <startupnotify>
              <enabled>true</enabled>
