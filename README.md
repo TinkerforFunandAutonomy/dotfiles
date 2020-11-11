@@ -4,18 +4,22 @@ Partial selection of dotfiles. They are currated (personal and silly stuff left 
 ## Dotfiles are personal
 These dotfiles are not intended to work out of the box and you should not use them for other purpose as for reference. 
 
-So PRs don't make sense in this contex. Don't let others define your dotfiles it is yours and enjoy the experience to tailor them to your needs.
+So PRs don't make sense in this contex. Don't let others define your dotfiles it is yours and enjoy the experience of tailor them to your needs.
 
 It is more than likely they won't behave as expected. The main cause will be missing packages. I will do my best to document dependencies but I might forget.
 
 The following people have dotfiles worth studying:
+
 [gotbletu](https://github.com/gotbletu)
+
 [Luke Smith](https://github.com/lukesmithxyz)
 
 
 ## Regarding scripts
 In acknowlegment of the fact that my curent self is way smarter and into the subject matter than my future self. I tend to keep my scripts intentional simple and deprived of any form of cleverness.
+
 I have been bitten by my past selfs cleverness way to many times. Therefor I will rather repeat myself (I know one should strive for DRY) than trying to factor out every single detail.
+
 The scripts are often run once and any optimization that leeds to abstraction are IMHO not worht it. I'm getting old and studpid, so I like it plain and simple.
 
 
@@ -48,4 +52,3 @@ If availble in the distrobution repositories that package is prefered (ease of m
 
 ### Wallpaper(s)
 They are most likly from Unsplash. To keep track of them I have made a [collection on Unsplash](https://unsplash.com/collections/42048583/wallpapers)
-
