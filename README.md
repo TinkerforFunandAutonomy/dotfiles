@@ -16,7 +16,7 @@ As an example [IceWM](https://ice-wm.org/) was replaced with [Openbox](http://op
 ## Origin
 The base is stolen from [crunchbangplusplus](https://github.com/CBPP/cbpp-configs) config files. It is not a fork, because it is not intended to live in the same envoirement.
 
-## Master branch
+## Main branch
 Will be somewhat of a empty shell which new branches are based upon. It will likely be the bare minimum of configs that is common among each branch and might grow stale quickly as changhes in branches are not merged. 
 
 ## External resources
