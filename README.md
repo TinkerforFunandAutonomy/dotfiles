@@ -1,5 +1,8 @@
-# dotfiles
+# dotfiles for Fedora on T420
 Partial selection of dotfiles. They are currated (personal and silly stuff left out).
+As showen in [Minimal Fedora 33 setup with Openbox](https://www.youtube.com/watch?v=DEvPM50tbsg) on YouTube
+
+
 
 ## Dotfiles are personal
 These dotfiles are not intended to work out of the box and you should not use them for other purpose as for reference. 
