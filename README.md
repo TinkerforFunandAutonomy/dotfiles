@@ -1,8 +1,7 @@
-# dotfiles Debian Buster@ThinkCentre M93p tiny
+# dotfiles Debian Buster@ThinkCentre M93p
 Partial selection of dotfiles. They are currated (personal and silly stuff left out).
 
-As showen in [Channel intro](https://www.youtube.com/watch?v=-xwoci5WeEI) on YouTube
-
+This branch is a light version of my main workstation configs which is located in the [Debian@M93p-tiny branch](https://github.com/TinkerforFunandAutonomy/dotfiles/tree/Debian%40M93p-tiny)
 
 ## Dotfiles are personal
 These dotfiles are not intended to work out of the box and you should not use them for other purpose as for reference. 
